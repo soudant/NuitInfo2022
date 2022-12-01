@@ -1,8 +1,23 @@
-<h1>DALL-E</h1>
+<div id="mainbox">
+  <h1>DALL-E</h1>
 
-<form (ngSubmit)="onSubmitForm()">
-  <input id="description" name="description" type="text" [(ngModel)]="description">
-</form>
+  <form (ngSubmit)="onSubmitForm()">
+    <mat-form-field class="example-form-field">
+      <mat-label>Your search</mat-label>
+      <input
+        matInput
+        id="description"
+        name="description"
+        type="text"
+        [(ngModel)]="description"
+      />
+    </mat-form-field>
+  </form>
 
-<p>your input : {{  description }}</p>
-<img [src]="image">
+    <app-loading *ngIf="isLoading">
+    </app-loading>
+
+  <div class="imageContainer">
+    <img [src]="image" />
+  </div>
+</div>

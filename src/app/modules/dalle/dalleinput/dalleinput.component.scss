@@ -1,0 +1,37 @@
+@use "@angular/material" as mat;
+
+
+//center mainbox
+#mainbox {
+    //center element
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    //background
+    background-color: #f5f5f5;
+
+    border-radius: 5px;
+    //width
+    width: 100vw;
+    //height
+    height: 100vh;
+}
+
+
+
+
+// .example-form-field {
+//     input {
+//         //mat elevation
+//         @include mat.elevation(4);
+//     }
+
+//     mat-label {
+//         //color
+//         color: gray;
+//         margin-left: 10px;
+//     }
+
+
+// }
