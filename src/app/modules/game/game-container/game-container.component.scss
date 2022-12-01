@@ -1,7 +1,13 @@
-.game__container{
+.game__container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  .game__container--answer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: min(85vh, 85vw);
+  }
 }
