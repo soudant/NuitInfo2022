@@ -16,8 +16,8 @@ import { MaterialModule } from './modules/material/material.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GameModule,
     MaterialModule,
+    GameModule,
     BrowserAnimationsModule
   ],
   providers: [],

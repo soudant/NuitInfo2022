@@ -1,6 +1,6 @@
 <div>
   <app-question [question]="currentQuestion.enonce"></app-question>
-  <div>
+  <div class="game__container">
     <app-answer
       *ngFor="let answer of currentQuestion.reponses"
       [answer]="answer"
