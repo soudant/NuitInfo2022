@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GameModule } from './modules/game/game.module';
+import { MaterialModule } from './modules/material/material.module';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { GameModule } from './modules/game/game.module';
     BrowserModule,
     AppRoutingModule,
     GameModule,
-    
+    MaterialModule,
     BrowserAnimationsModule
   ],
   providers: [],

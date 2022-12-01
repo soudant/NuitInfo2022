@@ -1,4 +1,10 @@
 <div>
-  <app-question></app-question>
-  <app-answer></app-answer>
+  <app-question [question]="currentQuestion.enonce"></app-question>
+  <div>
+    <app-answer
+      *ngFor="let answer of currentQuestion.reponses"
+      [answer]="answer"
+    >
+    </app-answer>
+  </div>
 </div>

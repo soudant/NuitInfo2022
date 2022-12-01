@@ -7,11 +7,22 @@ import { QuestionServiceService } from 'src/app/services/question-service.servic
   styleUrls: ['./game-container.component.scss']
 })
 export class GameContainerComponent implements OnInit {
-  questions!:string[];
+  questions!:any;
+  currentQuestion!:any;
+  currentAnswers!:string[];
   constructor(private questionService: QuestionServiceService) { }
-
+  
   ngOnInit(): void {
     this.questions = this.questionService.questions;
+    this.currentQuestion = this.getOneQuestion();
+    console.log(this.currentQuestion);
+  }
+
+  getOneQuestion():any{
+    return this.questionService.getNextQuestion();
+  };
+  getAnswers(key:string):string[]{
+    return this.questionService.getAnswers(key);
   }
 
 }
