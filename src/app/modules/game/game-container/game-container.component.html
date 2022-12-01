@@ -1,10 +1,10 @@
-<div>
+<mat-card class="game__container">
   <app-question [question]="currentQuestion.enonce"></app-question>
-  <div class="game__container">
+  <div class="game__container--answer">
     <app-answer
       *ngFor="let answer of currentQuestion.reponses"
       [answer]="answer"
     >
     </app-answer>
   </div>
-</div>
+</mat-card>
