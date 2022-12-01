@@ -1,4 +1,4 @@
-<div id="mainbox">
+<!-- <div id="mainbox">
   <h1>DALL-E</h1>
 
   <form (ngSubmit)="onSubmitForm()">
@@ -16,6 +16,42 @@
 
     <app-loading *ngIf="isLoading">
     </app-loading>
+
+  <div class="imageContainer">
+    <img [src]="image" />
+  </div>
+</div> -->
+
+<div id="mainbox">
+  <h1>DALL-E</h1>
+
+  <!-- <form id="form" (ngSubmit)="onSubmitForm()">
+    <input
+      id="description"
+      name="description"
+      type="text"
+      [(ngModel)]="description"
+    />
+  </form> -->
+  <div class="text">
+    <p>{{ text }}</p>
+  </div>
+  <form (ngSubmit)="onSubmitForm()">
+    <mat-form-field class="example-form-field">
+      <mat-label>Votre phrase</mat-label>
+      <input
+        matInput
+        id="description"
+        name="description"
+        type="text"
+        [(ngModel)]="description"
+      />
+    </mat-form-field>
+  </form>
+
+  <div class="loader">
+    <app-loading *ngIf="isLoading"> </app-loading>
+  </div>
 
   <div class="imageContainer">
     <img [src]="image" />
