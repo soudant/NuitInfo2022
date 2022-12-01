@@ -1,1 +1,8 @@
-<p>dalleinput works!</p>
+<h1>DALL-E</h1>
+
+<form (ngSubmit)="onSubmitForm()">
+  <input id="description" name="description" type="text" [(ngModel)]="description">
+</form>
+
+<p>your input : {{  description }}</p>
+<img [src]="image">
