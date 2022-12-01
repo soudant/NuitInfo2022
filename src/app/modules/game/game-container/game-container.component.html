@@ -1,10 +1,9 @@
 <div>
   <app-question [question]="currentQuestion.enonce"></app-question>
   <div class="game__container">
-    <app-answer
-      *ngFor="let answer of currentQuestion.reponses"
+    <app-answer *ngFor="let answer of currentQuestion.reponses"
       [answer]="answer"
-    >
+      (submitAnswer)="onSubmitAnswer($event)">
     </app-answer>
   </div>
 </div>

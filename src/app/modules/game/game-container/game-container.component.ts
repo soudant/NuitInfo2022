@@ -21,8 +21,13 @@ export class GameContainerComponent implements OnInit {
   getOneQuestion():any{
     return this.questionService.getNextQuestion();
   };
+
   getAnswers(key:string):string[]{
     return this.questionService.getAnswers(key);
+  }
+
+  onSubmitAnswer(answer: string) {
+    console.log(answer);
   }
 
 }

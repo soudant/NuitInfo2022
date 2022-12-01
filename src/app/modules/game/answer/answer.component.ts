@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { QuestionServiceService } from 'src/app/services/question-service.service';
 
 @Component({
@@ -8,12 +8,17 @@ import { QuestionServiceService } from 'src/app/services/question-service.servic
 })
 export class AnswerComponent implements OnInit {
 
-  @Input()
-  answer!:string;
+  @Input() answer!: string;
+  @Output() submitAnswer = new EventEmitter<string>();
+
   constructor(private questionService: QuestionServiceService) { }
 
   ngOnInit(): void {
 
+  }
+
+  onClickAnswer() {
+    this.submitAnswer.emit(this.answer);
   }
 
 }
