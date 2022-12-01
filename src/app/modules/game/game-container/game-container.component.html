@@ -1,5 +1,7 @@
 <mat-card class="game__container">
-  <app-question [question]="currentQuestion.enonce"></app-question>
+  <mat-card-header>
+    <app-question [question]="currentQuestion.enonce"></app-question>
+  </mat-card-header>
   <div class="game__container--answer">
     <app-answer
       *ngFor="let answer of currentQuestion.reponses"
