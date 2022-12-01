@@ -17,7 +17,7 @@ export class DalleinputComponent implements OnInit {
   ngOnInit() {
     const configuration = new Configuration({
       organization: 'org-Lwaz9hCUPAkP0PmpdV5BruhG',
-      apiKey: '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',
+      apiKey: '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',
     });
 
     this.openai = new OpenAIApi(configuration);
