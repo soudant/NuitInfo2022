@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { QuestionServiceService } from 'src/app/services/question-service.service';
 
 @Component({
   selector: 'app-answer',
@@ -11,7 +10,7 @@ export class AnswerComponent implements OnInit {
   @Input() answer!: string;
   @Output() submitAnswer = new EventEmitter<string>();
 
-  constructor(private questionService: QuestionServiceService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
