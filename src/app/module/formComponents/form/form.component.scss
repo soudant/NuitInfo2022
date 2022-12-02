@@ -1,3 +1,5 @@
+
+
 .champsForm{
   display: flex;
   flex-direction: column;
@@ -5,11 +7,12 @@
 }
 
 .label {
-  color: black;
+  color: black;  
 }
 
 input {
   border: black;
+
 }
 
 .error {
