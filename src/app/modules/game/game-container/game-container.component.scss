@@ -6,9 +6,9 @@
   
   .game_container--answer-content {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
-    
+    width: min(85vh, 85vw);  
     @media screen and (max-width: 480px) {
       display: flex;
       flex-direction: column;
