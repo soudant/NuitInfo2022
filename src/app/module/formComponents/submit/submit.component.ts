@@ -1,6 +1,5 @@
 import {Component, NgModule, OnInit} from '@angular/core';
-import { RouterModule } from '@angular/router';
-import {BrowserModule} from "@angular/platform-browser";
+import {Router, RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-submit',
@@ -8,11 +7,11 @@ import {BrowserModule} from "@angular/platform-browser";
   styleUrls: ['./submit.component.scss']
 })
 export class SubmitComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor() {
+  ngOnInit(): void {}
 
-  }
-
-  ngOnInit(): void {
+  async game() {
+    await this.router.navigateByUrl("game")
   }
 }
