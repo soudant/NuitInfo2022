@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { MailInputComponent } from '../mail-input/mail-input.component';
 
 @Component({
   selector: 'app-form',
@@ -6,12 +7,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  value: string;
+  firstName!: string;
+  lastName!:string;
   constructor() {
-    this.value = '';
+    this.firstName='';
+    this.lastName='';
   }
 
   ngOnInit(): void {
-  }
-
-}
+    
+  }}
