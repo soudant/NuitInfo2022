@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Question } from 'src/app/models/question.model';
 import { QuestionServiceService } from 'src/app/services/question-service.service';
 
 @Component({
@@ -7,27 +8,41 @@ import { QuestionServiceService } from 'src/app/services/question-service.servic
   styleUrls: ['./game-container.component.scss']
 })
 export class GameContainerComponent implements OnInit {
-  questions!:any;
-  currentQuestion!:any;
-  currentAnswers!:string[];
+
+  currentQuestion!: Question;
+  answered = false;
+  end = false;
+  result = "PERDU ... Dommage !";
+  isMatPokoraSpeaking = false;
+
   constructor(private questionService: QuestionServiceService) { }
   
   ngOnInit(): void {
-    this.questions = this.questionService.questions;
-    this.currentQuestion = this.getOneQuestion();
-    console.log(this.currentQuestion);
-  }
-
-  getOneQuestion():any{
-    return this.questionService.getNextQuestion();
-  };
-
-  getAnswers(key:string):string[]{
-    return this.questionService.getAnswers(key);
+    this.onNextQuestion();
   }
 
   onSubmitAnswer(answer: string) {
-    console.log(answer);
+    this.answered = true
+    if (answer === this.currentQuestion.reponses[this.currentQuestion.bonneReponse]) {
+      this.result = "GAGNER ! Bien joué !";
+    } else {
+      this.result = "PERDU ... Dommage !";
+    }
   }
 
+  onNextQuestion() {
+    this.answered = false;
+
+    if (this.questionService.getThereAreStillQuestion()) {
+      this.currentQuestion = this.questionService.getNextQuestion();
+      this.matSpeak();
+    } else {
+      this.end = true;
+    }    
+  }
+
+  matSpeak() {
+    this.isMatPokoraSpeaking = true;
+    setTimeout(() => this.isMatPokoraSpeaking = false, 1500);
+  }
 }

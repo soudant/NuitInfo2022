@@ -1,12 +1,62 @@
-<mat-card class="game__container">
-  <mat-card-header>
-    <app-question [question]="currentQuestion.enonce"></app-question>
-  </mat-card-header>
-  <div class="game__container--answer">
-    <app-answer
-      *ngFor="let answer of currentQuestion.reponses"
-      [answer]="answer"
-      (submitAnswer)="onSubmitAnswer($event)">
-    </app-answer>
-  </div>
-</mat-card>
+<div
+  [ngClass]="{
+    'game__container--presentator-speaking': isMatPokoraSpeaking,
+    'game__container--presentator': !isMatPokoraSpeaking
+  }"
+>
+  <img src="assets/presentator.png" class="game__container--presentator-face" />
+  <img
+    src="assets/presentator_bouche.png"
+    class="game__container--presentator-mouth"
+  />
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="game__container">
+  <mat-card>
+    <mat-card-header></mat-card-header>
+    <mat-card-content>
+      <app-question [question]="currentQuestion.enonce"></app-question>
+      <div class="game_container--answer-content">
+        <app-answer
+          *ngFor="let answer of currentQuestion.reponses"
+          [answer]="answer"
+          (submitAnswer)="onSubmitAnswer($event)"
+        >
+        </app-answer>
+      </div>
+
+      <div *ngIf="answered">
+        <h2>{{ result }}</h2>
+        <p>Description</p>
+        <button (click)="onNextQuestion()" mat-raised-button color="primary">
+          Question Suivante
+        </button>
+      </div>
+      <div *ngIf="end">
+        <h2>Il n'y a plus de question :(</h2>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

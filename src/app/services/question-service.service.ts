@@ -1,33 +1,62 @@
 import { Injectable } from '@angular/core';
-
+import { Question } from '../models/question.model';
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionServiceService {
 
-  questions: any=[
-    {enonce:"Est ce que le VIH est mortel ?",reponses:["Oui","Non","Peut être"]},
-    {enonce:"Est ce que le SIDA est mortel ?",reponses:["romain N mot","bla","non","la reponse D"]},
-    {enonce:"Sida transimissible ?",reponses:["oui","non","peut etre","la mer noire"]},
-    {enonce:"Est que un échange de salive peut transmettre cette maladie",reponses:["oui","non","peut etre","la mer noire"]},
-    {enonce:"Qu'est ce que TPE ? ",reponses:["oui","non","peut etre","la mer noire"]}
-  ]
+  questions: Question[] = [
+    {
+      enonce: 'Est ce que le VIH est mortel ?',
+      reponses: [
+            'Oui',
+            'Non',
+            'Peut être',
+            'I dont know'
+      ],
+      bonneReponse : 1
+    },
+    {
+      enonce: 'Est ce que le SIDA est mortel ?',
+      reponses: [
+            'Oui',
+            'Non',
+            'Peut être',
+            'I dont know'
+      ],
+      bonneReponse : 2
+    },
+    {
+      enonce: 'Est ce que le L’hépatite B est mortel ?',
+      reponses: [
+            'Oui',
+            'Non',
+            'Peut être',
+            'I dont know'
+      ],
+      bonneReponse : 0
+    },
+    {
+      enonce: 'Est ce que le VIH est mortel ?',
+      reponses: [
+            'Oui',
+            'Non',
+            'Peut être',
+            'I dont know'
+      ],
+      bonneReponse: 3
+    }
+  ];
 
-  constructor(
-  ) { }
-  getNextQuestion():any{
-    return this.questions[Math.floor(Math.random() * this.questions.length)];
-  
-  };
-  getFirstQuestion():string{
-    return this.questions["question1"];
-    // return this.questions["question1"];
-  };
-  getAnswers(key:string):string[]{
-    return this.questions[key].reponses;
+  constructor() { }
+
+  getThereAreStillQuestion(): boolean {
+    return this.questions.length != 0;
   }
 
-
-
+  getNextQuestion(): Question {
+    const question = this.questions.splice(Math.floor(Math.random() * this.questions.length), 1)[0];
+    return question;
+  }
 
 }

@@ -6,7 +6,7 @@ import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
-import { MatCardModule} from '@angular/material/card';
+import {  MatCardModule} from '@angular/material/card';
 
 @NgModule({
     imports: [MatIconModule],
