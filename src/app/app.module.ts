@@ -14,7 +14,6 @@ import { CaptchaComponent } from './modules/captcha/captcha.component';
   declarations: [
     AppComponent,
     CaptchaComponent,
-    
   ],
   imports: [
     BrowserModule,

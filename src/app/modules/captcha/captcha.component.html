@@ -1,1 +1,9 @@
-<p>captcha works!</p>
+<!-- import js -->
+<div id="box">
+    <img *ngIf="hideImage"
+      (click)="imageSource()"
+      id="captchaimage"
+      src="assets/captcha.png"
+      [ngStyle]="{ width: '20%', height: '20%' }"
+    />
+</div>
