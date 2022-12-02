@@ -42,7 +42,12 @@ export class GameContainerComponent implements OnInit {
   }
 
   matSpeak() {
-    this.isMatPokoraSpeaking = true;
+    this.isMatPokoraSpeaking = true;    
     setTimeout(() => this.isMatPokoraSpeaking = false, 1500);
+
+    var msg = new SpeechSynthesisUtterance();
+    msg.text = this.currentQuestion.enonce;
+    msg.volume = 1;
+    window.speechSynthesis.speak(msg);
   }
 }
