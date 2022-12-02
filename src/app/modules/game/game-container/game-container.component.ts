@@ -46,8 +46,15 @@ export class GameContainerComponent implements OnInit {
     setTimeout(() => this.isMatPokoraSpeaking = false, 1500);
 
     var msg = new SpeechSynthesisUtterance();
+    
+    msg.lang = 'es-ES';
     msg.text = this.currentQuestion.enonce;
     msg.volume = 1;
+    
     window.speechSynthesis.speak(msg);
+
+    speechSynthesis.getVoices().forEach(function(voice) {
+      console.log(voice.name, voice.default ? voice.default :'');
+    });
   }
 }

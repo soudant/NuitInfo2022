@@ -49,7 +49,7 @@
 
       <div *ngIf="answered">
         <h2>{{ result }}</h2>
-        <p>Description</p>
+        <p>{{currentQuestion.description}}</p>
         <button (click)="onNextQuestion()" mat-raised-button color="primary">
           Question Suivante
         </button>
